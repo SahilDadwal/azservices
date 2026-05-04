@@ -15,6 +15,7 @@
   html {
     margin: 0;
     min-height: 100%;
+    min-width: 0;
     scroll-behavior: smooth;
     background: #FFFFFF;
   }
@@ -126,12 +127,13 @@
   .typed-word {
     position: relative;
     display: inline-block;
+    max-width: 100%;
     background: linear-gradient(135deg, #6B5B2D 0%, #AD8330 48%, #C6AE73 100%);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-    min-width: 12ch;
+    min-width: min(12ch, 100%);
     min-height: 1.12em;
   }
 

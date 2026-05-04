@@ -13,12 +13,12 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative isolate flex min-h-screen items-center overflow-hidden bg-white pb-12 pt-[96px] md:pb-16 md:pt-[120px] lg:pb-[60px]"
+      className="relative isolate flex min-h-screen w-full min-w-0 items-center overflow-x-hidden overflow-y-hidden bg-white pb-12 pt-[96px] md:pb-16 md:pt-[120px] lg:pb-[60px]"
     >
       <div className="absolute inset-0 -z-10 bg-gold-soft opacity-10" aria-hidden="true" />
       <div className="absolute inset-x-0 top-20 -z-10 h-px bg-gold-band" aria-hidden="true" />
 
-      <div className="mx-auto w-full max-w-7xl px-5 text-center sm:px-8">
+      <div className="mx-auto w-full min-w-0 max-w-7xl px-5 text-center sm:px-8">
         <div
           className="mx-auto inline-flex items-center gap-2 rounded-full border border-gold-soft bg-white px-4 py-2 text-sm font-bold text-gold-rich shadow-gold"
           data-animate="zoom"
@@ -28,7 +28,7 @@ export function HeroSection() {
         </div>
 
         <h1
-          className="hero-title mx-auto mt-8 max-w-[900px] font-heading text-[26px] font-black leading-[1.1] tracking-normal text-gold sm:text-[34px] md:text-[48px] lg:text-[52px]"
+          className="hero-title mx-auto mt-8 w-full max-w-[900px] break-words px-0 font-heading text-[26px] font-black leading-[1.1] tracking-normal text-gold sm:text-[34px] md:text-[48px] lg:text-[52px]"
           data-animate="zoom"
           style={{ transitionDelay: "90ms" }}
         >
@@ -71,7 +71,11 @@ export function HeroSection() {
           </a>
         </div>
 
-        <div className="relative mx-auto mt-10 max-w-[900px] md:mt-14 lg:mt-[60px]" data-animate style={{ transitionDelay: "320ms" }}>
+        <div
+          className="relative mx-auto mt-10 w-full min-w-0 max-w-[900px] md:mt-14 lg:mt-[60px]"
+          data-animate
+          style={{ transitionDelay: "320ms" }}
+        >
           <GoldImage
             src="/assets/img/about/about-18.webp"
             alt="Dubai advisory workspace"

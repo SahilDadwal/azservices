@@ -29,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${headingFont.variable} ${bodyFont.variable}`}>
-      <body>{children}</body>
+      <body className="min-w-0 overflow-x-hidden">{children}</body>
     </html>
   );
 }

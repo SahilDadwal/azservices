@@ -10,7 +10,9 @@ type GoldImageProps = {
 
 export function GoldImage({ src, alt, className, priority = false, sizes = "100vw" }: GoldImageProps) {
   return (
-    <div className={`image-lift image-zoom relative overflow-hidden rounded-lg border border-gold-soft bg-white shadow-gold ${className}`}>
+    <div
+      className={`image-lift image-zoom relative w-full max-w-full overflow-hidden rounded-lg border border-gold-soft bg-white shadow-gold ${className}`}
+    >
       <Image
         src={src}
         alt={alt}

@@ -18,7 +18,7 @@ export default function Home() {
     <>
       <ScrollAnimations />
       <Header />
-      <main>
+      <main className="min-w-0 w-full overflow-x-hidden">
         <HeroSection />
         <AboutSection />
         <FeaturesSection />
