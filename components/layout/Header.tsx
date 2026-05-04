@@ -19,7 +19,7 @@ export function Header() {
           href="#hero"
           className="relative order-1 flex min-w-0 shrink items-center lg:order-none lg:justify-self-start"
         >
-          <span className="relative block h-14 w-auto max-w-[min(100%,calc(100vw-10rem))] sm:h-16 md:h-[4.5rem] lg:h-[4.75rem] lg:max-w-[min(760px,54vw)] xl:h-20 xl:max-w-[min(900px,50vw)] 2xl:max-w-[min(960px,48vw)]">
+          <span className="relative block h-10 w-auto max-w-[min(100%,calc(100vw-10rem))] sm:h-12 md:h-14 lg:h-[3.5rem] lg:max-w-[min(540px,46vw)] xl:h-16 xl:max-w-[min(660px,42vw)] 2xl:max-w-[min(700px,40vw)]">
             <Image
               src={mainLogoSrc}
               alt="AZ Services L.L.C-FZ"
@@ -28,6 +28,7 @@ export function Header() {
               className="h-full w-auto max-h-full object-contain object-left"
               priority
               sizes="(max-width: 1024px) 80vw, (max-width: 1536px) 54vw, 960px"
+              unoptimized
             />
           </span>
         </a>

@@ -5,6 +5,7 @@ import {
   Calculator,
   ClipboardCheck,
   Globe,
+  House,
   Landmark,
   Search,
   ShieldCheck,
@@ -22,6 +23,18 @@ type Service = {
 
 const services: Service[] = [
   {
+    icon: WalletCards,
+    title: "Corporate Bank Account Opening",
+    description:
+      "Preparation of banking files, company documents, activity information, and compliance records for UAE bank review."
+  },
+  {
+    icon: House,
+    title: "Real Estate",
+    description:
+      "Guidance on UAE property-linked structuring, brokerage coordination, lease and purchase documentation readiness, and alignment with your corporate setup where relevant."
+  },
+  {
     icon: Building2,
     title: "Business Setup In Free Zones",
     description:
@@ -38,12 +51,6 @@ const services: Service[] = [
     title: "Offshore Company Setup",
     description:
       "Advisory for UAE offshore routes designed for international holding, cross-border trade, and eligible corporate structuring needs."
-  },
-  {
-    icon: WalletCards,
-    title: "Corporate Bank Account Opening",
-    description:
-      "Preparation of banking files, company documents, activity information, and compliance records for UAE bank review."
   },
   {
     icon: Calculator,
