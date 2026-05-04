@@ -13,10 +13,9 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative isolate flex min-h-screen w-full min-w-0 items-center overflow-x-hidden overflow-y-hidden bg-white pb-12 pt-[96px] md:pb-16 md:pt-[120px] lg:pb-[60px]"
+      className="relative isolate flex min-h-screen w-full min-w-0 items-center overflow-x-hidden overflow-y-hidden bg-white pb-12 pt-32 sm:pt-36 md:pb-16 md:pt-36 lg:pb-[60px] lg:pt-32"
     >
       <div className="absolute inset-0 -z-10 bg-gold-soft opacity-10" aria-hidden="true" />
-      <div className="absolute inset-x-0 top-20 -z-10 h-px bg-gold-band" aria-hidden="true" />
 
       <div className="mx-auto w-full min-w-0 max-w-7xl px-5 text-center sm:px-8">
         <div
@@ -28,12 +27,11 @@ export function HeroSection() {
         </div>
 
         <h1
-          className="hero-title mx-auto mt-8 w-full max-w-[900px] break-words px-0 font-heading text-[26px] font-black leading-[1.1] tracking-normal text-gold sm:text-[34px] md:text-[48px] lg:text-[52px]"
+          className="hero-title mx-auto mt-8 w-full max-w-[900px] break-words px-0 font-heading text-[26px] font-black leading-[1.15] tracking-normal text-gold sm:text-[34px] md:text-[48px] lg:text-[52px]"
           data-animate="zoom"
           style={{ transitionDelay: "90ms" }}
         >
-          Launch Your UAE Business With
-          <br />
+          Launch Your UAE Business With{" "}
           <span className="typed-word">
             {typedText}
             <span className="typed-cursor" aria-hidden="true" />
