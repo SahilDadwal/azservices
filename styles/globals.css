@@ -9,7 +9,7 @@
 
   * {
     box-sizing: border-box;
-    border-color: #E6BE8A;
+    border-color: #AD9664;
   }
 
   html {
@@ -23,7 +23,7 @@
     margin: 0;
     min-height: 100%;
     background: #FFFFFF;
-    color: #C9A227;
+    color: #2E311A;
     font-family: var(--font-body), system-ui, sans-serif;
   }
 
@@ -34,7 +34,7 @@
   h5,
   h6 {
     margin: 0;
-    color: #D4AF37;
+    color: #AD8330;
     font-family: var(--font-heading), system-ui, sans-serif;
     font-weight: 800;
     letter-spacing: 0;
@@ -73,7 +73,7 @@
   }
 
   ::selection {
-    background: #D4AF37;
+    background: #AD8330;
     color: #FFFFFF;
   }
 }
@@ -112,6 +112,8 @@
 
   .motion-button {
     position: relative;
+    min-height: 44px;
+    align-items: center;
     overflow: hidden;
     transition:
       transform 0.3s ease,
@@ -121,18 +123,52 @@
       background 0.3s ease;
   }
 
+  .typed-word {
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(135deg, #6B5B2D 0%, #AD8330 48%, #C6AE73 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    min-width: 12ch;
+    min-height: 1.12em;
+  }
+
+  .typed-word::after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #6B5B2D 0%, #AD8330 52%, #C6AE73 100%);
+  }
+
+  .typed-cursor {
+    display: inline-block;
+    height: 0.9em;
+    width: 4px;
+    margin-left: 5px;
+    transform: translateY(0.08em);
+    background: #2E311A;
+    animation: typedCursorBlink 0.72s steps(1) infinite;
+    -webkit-text-fill-color: #2E311A;
+  }
+
   .motion-button::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #E6BE8A 100%);
+    background: linear-gradient(135deg, #C6AE73 0%, #AD8330 50%, #AD9664 100%);
     opacity: 0;
     transition: opacity 0.3s ease;
   }
 
   .motion-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 14px 36px #D4AF3740;
+    box-shadow: 0 6px 16px #AD833022;
   }
 
   .motion-button:hover::before {
@@ -169,14 +205,14 @@
     left: -100%;
     width: 100%;
     height: 4px;
-    background: linear-gradient(90deg, #C9A227 0%, #D4AF37 52%, #FFD700 100%);
+    background: linear-gradient(90deg, #6B5B2D 0%, #AD8330 52%, #C6AE73 100%);
     transition: left 0.5s ease;
   }
 
   .motion-card:hover {
     transform: translateY(-12px);
-    border-color: #D4AF37;
-    box-shadow: 0 24px 58px #D4AF3733;
+    border-color: #AD8330;
+    box-shadow: 0 10px 26px #6B5B2D1c;
   }
 
   .motion-card:hover::before {
@@ -201,7 +237,7 @@
   .motion-tab:hover .motion-icon,
   .contact-motion:hover .motion-icon {
     transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 12px 32px #D4AF3740;
+    box-shadow: 0 5px 14px #AD833022;
   }
 
   .motion-number {
@@ -225,13 +261,14 @@
   }
 
   .motion-card:hover .motion-chip {
-    background: #D4AF37;
-    border-color: #D4AF37;
+    background: #AD8330;
+    border-color: #AD8330;
     color: #FFFFFF;
     transform: translateY(-1px);
   }
 
   .motion-tab {
+    min-height: 44px;
     transition:
       transform 0.35s ease,
       box-shadow 0.35s ease,
@@ -242,7 +279,7 @@
 
   .motion-tab:hover {
     transform: translateY(-4px);
-    box-shadow: 0 16px 38px #D4AF372e;
+    box-shadow: 0 6px 16px #AD833018;
   }
 
   .image-lift {
@@ -251,7 +288,7 @@
 
   .image-lift:hover {
     transform: translateY(-5px);
-    box-shadow: 0 24px 62px #D4AF3733;
+    box-shadow: 0 10px 26px #6B5B2D1a;
   }
 
   .image-zoom img {
@@ -287,8 +324,8 @@
 
   .contact-motion:hover {
     transform: translateX(10px);
-    border-color: #D4AF37;
-    box-shadow: 0 14px 34px #D4AF372e;
+    border-color: #AD8330;
+    box-shadow: 0 5px 14px #AD833016;
   }
 
   .mini-lift {
@@ -300,8 +337,8 @@
 
   .mini-lift:hover {
     transform: translateY(-3px);
-    border-color: #FFD700;
-    box-shadow: 0 12px 30px #D4AF3726;
+    border-color: #C6AE73;
+    box-shadow: 0 4px 12px #AD833014;
   }
 
   @keyframes azFloat {
@@ -327,6 +364,18 @@
     }
   }
 
+  @keyframes typedCursorBlink {
+    0%,
+    49% {
+      opacity: 1;
+    }
+
+    50%,
+    100% {
+      opacity: 0;
+    }
+  }
+
   @media (max-width: 768px) {
     .contact-motion:hover {
       transform: translateY(-5px);
@@ -345,7 +394,8 @@
     .image-zoom img,
     .contact-motion,
     .mini-lift,
-    .tab-panel-motion {
+    .tab-panel-motion,
+    .typed-cursor {
       animation: none !important;
       opacity: 1 !important;
       transform: none !important;

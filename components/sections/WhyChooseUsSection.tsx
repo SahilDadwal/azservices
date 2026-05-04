@@ -38,7 +38,7 @@ const reasons: Reason[] = [
 
 export function WhyChooseUsSection() {
   return (
-    <section className="bg-white py-20 sm:py-24">
+    <section className="bg-white py-10 sm:py-14 md:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div data-animate>
           <SectionHeading
@@ -48,7 +48,7 @@ export function WhyChooseUsSection() {
           />
         </div>
 
-        <div className="mt-16 grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="mt-10 grid gap-8 md:mt-14 md:gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div data-animate="left">
             <GoldImage
               src="/assets/img/misc/misc-5.webp"
@@ -58,22 +58,22 @@ export function WhyChooseUsSection() {
             />
           </div>
 
-          <div className="grid gap-5 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
             {reasons.map((reason, index) => {
               const Icon = reason.icon;
 
               return (
                 <article
                   key={reason.title}
-                  className="motion-card rounded-lg border border-gold-soft bg-white p-6 shadow-gold"
+                  className="motion-card rounded-lg border border-gold-soft bg-white p-5 shadow-gold sm:p-6"
                   data-animate="flip"
                   style={{ transitionDelay: `${index * 80}ms` }}
                 >
                   <span className="motion-icon grid h-12 w-12 place-items-center rounded-lg border border-gold-soft bg-gold/10 text-gold">
                     <Icon className="h-6 w-6" aria-hidden="true" />
                   </span>
-                  <h3 className="mt-5 text-xl font-black text-gold">{reason.title}</h3>
-                  <p className="mt-4 text-sm leading-7 text-gold-rich">{reason.description}</p>
+                  <h3 className="mt-5 text-lg font-black text-gold sm:text-xl">{reason.title}</h3>
+                  <p className="mt-4 text-[14px] leading-[1.65] text-gold-rich sm:text-sm sm:leading-7">{reason.description}</p>
                 </article>
               );
             })}

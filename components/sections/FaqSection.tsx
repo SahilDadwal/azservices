@@ -36,7 +36,7 @@ const faqs = [
 
 export function FaqSection() {
   return (
-    <section id="faq" className="bg-white py-20 sm:py-24">
+    <section id="faq" className="bg-white py-10 sm:py-14 md:py-20 lg:py-24">
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
         <div data-animate>
           <SectionHeading
@@ -46,7 +46,7 @@ export function FaqSection() {
           />
         </div>
 
-        <div className="mt-12 grid gap-4">
+        <div className="mt-8 grid gap-3 md:mt-12 md:gap-4">
           {faqs.map((faq, index) => (
             <details
               key={faq.question}
@@ -54,11 +54,11 @@ export function FaqSection() {
               data-animate
               style={{ transitionDelay: `${index * 60}ms` }}
             >
-              <summary className="flex cursor-pointer items-center justify-between gap-4 text-left">
-                <span className="font-heading text-lg font-black text-gold">{faq.question}</span>
+              <summary className="flex min-h-[44px] cursor-pointer items-center justify-between gap-4 py-1 text-left sm:py-0">
+                <span className="font-heading text-base font-black text-gold sm:text-lg">{faq.question}</span>
                 <ChevronDown className="h-5 w-5 shrink-0 text-gold transition group-open:rotate-180" aria-hidden="true" />
               </summary>
-              <p className="mt-4 text-sm leading-7 text-gold-rich">{faq.answer}</p>
+              <p className="mt-3 text-[14px] leading-[1.65] text-gold-rich sm:mt-4 sm:text-sm sm:leading-7">{faq.answer}</p>
             </details>
           ))}
         </div>

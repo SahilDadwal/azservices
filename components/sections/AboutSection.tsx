@@ -26,8 +26,8 @@ const values = [
 
 export function AboutSection() {
   return (
-    <section id="about" className="bg-white py-20 sm:py-24">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:gap-16">
+    <section id="about" className="bg-white py-10 sm:py-14 md:py-20 lg:py-24">
+      <div className="mx-auto grid max-w-7xl items-center gap-8 px-5 sm:px-8 md:gap-12 lg:grid-cols-2 lg:gap-16">
         <div data-animate="left">
           <GoldImage
             src="/assets/img/about/about-portrait-7.webp"
@@ -41,17 +41,17 @@ export function AboutSection() {
           <span className="inline-flex rounded-full border border-gold-soft bg-gold/10 px-4 py-2 text-xs font-black uppercase tracking-normal text-gold-rich">
             About AZ Services
           </span>
-          <h2 className="mt-6 font-heading text-3xl font-black leading-tight tracking-normal text-gold sm:text-4xl lg:text-5xl">
+          <h2 className="mt-6 font-heading text-[26px] font-black leading-tight tracking-normal text-gold sm:text-3xl md:text-4xl lg:text-5xl">
             A focused Dubai advisory partner for business setup and corporate operations.
           </h2>
-          <p className="mt-6 text-lg leading-8 text-gold-rich">
+          <p className="mt-6 text-base leading-[1.65] text-gold-rich sm:text-lg sm:leading-8">
             AZ SERVICES L.L.C-FZ supports entrepreneurs and international businesses across
             UAE company formation, administration, tax consultancy, compliance, accounting,
             due diligence, and corporate bank account preparation. Whether you are choosing a
             free zone, mainland, or offshore route, the work is shaped around your commercial
             goals and the regulatory steps needed to move cleanly.
           </p>
-          <p className="mt-5 text-base leading-8 text-gold-rich">
+          <p className="mt-5 text-[15px] leading-[1.65] text-gold-rich sm:text-base sm:leading-8">
             Our approach is start-to-finish: understand the business, select the right
             structure, prepare documentation, coordinate licensing steps, and support the
             operational needs that follow after incorporation.
@@ -79,14 +79,14 @@ export function AboutSection() {
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
             <a
               href="#services"
-              className="motion-button inline-flex items-center justify-center gap-2 rounded-full border border-gold bg-gold-linear px-6 py-3 text-sm font-black text-white shadow-gold"
+              className="motion-button inline-flex items-center justify-center gap-2 rounded-full border border-gold bg-gold-linear px-6 py-3.5 text-sm font-black text-white shadow-gold sm:py-3"
             >
               <span>View Services</span>
               <ArrowRight className="motion-arrow h-4 w-4" aria-hidden="true" />
             </a>
             <a
               href="#contact"
-              className="motion-button inline-flex items-center justify-center rounded-full border border-gold-soft bg-white px-6 py-3 text-sm font-black text-gold-rich shadow-gold transition hover:border-gold hover:text-white"
+              className="motion-button inline-flex items-center justify-center rounded-full border border-gold-soft bg-white px-6 py-3.5 text-sm font-black text-gold-rich shadow-gold transition hover:border-gold hover:text-white sm:py-3"
             >
               <span>Contact Us</span>
             </a>

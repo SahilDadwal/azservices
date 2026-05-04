@@ -19,11 +19,7 @@ const bodyFont = Roboto({
 export const metadata: Metadata = {
   title: "AZ SERVICES L.L.C-FZ | UAE Business Setup & Advisory",
   description:
-    "Premium UAE business setup, corporate tax, accounting, compliance, due diligence, and bank account support from AZ SERVICES L.L.C-FZ.",
-  icons: {
-    icon: "/assets/img/favicon.png",
-    apple: "/assets/img/apple-touch-icon.png"
-  }
+    "Premium UAE business setup, corporate tax, accounting, compliance, due diligence, and bank account support from AZ SERVICES L.L.C-FZ."
 };
 
 export default function RootLayout({

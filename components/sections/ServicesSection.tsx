@@ -79,7 +79,7 @@ const services: Service[] = [
 
 export function ServicesSection() {
   return (
-    <section id="services" className="bg-white py-20 sm:py-24">
+    <section id="services" className="bg-white py-10 sm:py-14 md:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div data-animate>
           <SectionHeading
@@ -89,22 +89,22 @@ export function ServicesSection() {
           />
         </div>
 
-        <div className="mt-16 grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr]">
+        <div className="mt-10 grid items-center gap-8 md:mt-14 md:gap-12 lg:grid-cols-[0.95fr_1.05fr]">
           <div data-animate="left">
             <span className="inline-flex rounded-full border border-gold-soft bg-gold/10 px-4 py-2 text-xs font-black uppercase tracking-normal text-gold-rich">
               One-stop solution
             </span>
-            <h3 className="mt-6 font-heading text-3xl font-black leading-tight text-gold sm:text-4xl">
+            <h3 className="mt-6 font-heading text-[26px] font-bold leading-[1.2] text-gold sm:text-[32px] md:text-[40px] lg:text-[48px]">
               Transform business ideas into well-structured UAE companies.
             </h3>
-            <p className="mt-5 text-base leading-8 text-gold-rich">
+            <p className="mt-5 text-[15px] leading-[1.7] text-gold-rich sm:text-[16px] md:text-[17px]">
               The strongest setup is more than a license. It connects activity, jurisdiction,
               shareholders, banking readiness, tax responsibilities, and ongoing administration
               into one coherent structure.
             </p>
             <a
               href="#contact"
-              className="motion-button mt-8 inline-flex items-center gap-2 rounded-full border border-gold bg-gold-linear px-6 py-3 text-sm font-black text-white shadow-gold"
+              className="motion-button mt-8 inline-flex items-center justify-center gap-2 rounded-full border border-gold bg-gold-linear px-6 py-3.5 text-sm font-black text-white shadow-gold sm:py-3"
             >
               <span>Request Advisory</span>
               <ArrowRight className="motion-arrow h-4 w-4" aria-hidden="true" />
@@ -121,22 +121,22 @@ export function ServicesSection() {
           </div>
         </div>
 
-        <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-4 md:mt-14 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
           {services.map((service, index) => {
             const Icon = service.icon;
 
             return (
               <article
                 key={service.title}
-                className="motion-card rounded-lg border border-gold-soft bg-white p-6 shadow-gold"
+                className="motion-card rounded-[15px] border border-gold-soft bg-white p-6 shadow-gold md:p-8"
                 data-animate="flip"
                 style={{ transitionDelay: `${index * 60}ms` }}
               >
-                <span className="motion-icon grid h-12 w-12 place-items-center rounded-lg border border-gold-soft bg-gold/10 text-gold">
-                  <Icon className="h-6 w-6" aria-hidden="true" />
+                <span className="motion-icon grid h-[60px] w-[60px] place-items-center rounded-[15px] border border-gold-soft bg-gold/10 text-gold">
+                  <Icon className="h-7 w-7" aria-hidden="true" />
                 </span>
-                <h3 className="mt-5 text-xl font-black leading-tight text-gold">{service.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-gold-rich">{service.description}</p>
+                <h3 className="mt-6 text-lg font-semibold leading-[1.4] text-gold sm:text-[21px]">{service.title}</h3>
+                <p className="mt-4 text-[14px] leading-[1.6] text-gold-rich sm:text-[15px]">{service.description}</p>
               </article>
             );
           })}

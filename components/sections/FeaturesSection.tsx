@@ -51,7 +51,7 @@ const advantages = [
 
 export function FeaturesSection() {
   return (
-    <section id="features" className="bg-white py-20 sm:py-24">
+    <section id="features" className="bg-white py-10 sm:py-14 md:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div data-animate>
           <SectionHeading
@@ -61,12 +61,12 @@ export function FeaturesSection() {
           />
         </div>
 
-        <div className="mt-16 grid items-center gap-10 lg:grid-cols-2">
+        <div className="mt-10 grid items-center gap-8 md:mt-14 md:gap-10 lg:grid-cols-2">
           <div data-animate="left">
-            <h3 className="font-heading text-3xl font-black leading-tight text-gold">
+            <h3 className="font-heading text-[26px] font-bold leading-[1.3] text-gold sm:text-[30px] md:text-[36px]">
               Clear guidance across setup, banking, tax, and compliance.
             </h3>
-            <p className="mt-5 text-base leading-8 text-gold-rich">
+            <p className="mt-6 text-[15px] leading-[1.6] text-gold-rich sm:text-[17px] md:text-[18px]">
               The UAE can support regional expansion, global trade, consultancy, technology,
               e-commerce, and professional services. The important decision is choosing the
               structure that fits the activity, customers, jurisdiction, and banking profile.
@@ -96,32 +96,34 @@ export function FeaturesSection() {
           </div>
         </div>
 
-        <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-4 md:mt-14 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
           {advantages.map((item, index) => {
             const Icon = item.icon;
 
             return (
               <article
                 key={item.title}
-                className="motion-card group rounded-lg border border-gold-soft bg-white p-6 shadow-gold"
+                className="motion-card group rounded-[20px] border border-gold-soft bg-white p-5 shadow-gold sm:p-6 md:p-[30px] lg:p-[35px]"
                 data-animate="flip"
                 style={{ transitionDelay: `${index * 70}ms` }}
               >
                 <div className="flex items-start justify-between gap-4">
-                  <span className="motion-number font-heading text-4xl font-black text-gold-soft">
+                  <span className="motion-number font-heading text-[34px] font-black leading-none text-gold-soft sm:text-[40px] md:text-[48px]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <span className="motion-icon grid h-12 w-12 place-items-center rounded-lg border border-gold-soft bg-gold/10 text-gold transition group-hover:bg-gold group-hover:text-white">
-                    <Icon className="h-6 w-6" aria-hidden="true" />
+                  <span className="motion-icon grid h-[62px] w-[62px] place-items-center rounded-[16px] border border-gold-soft bg-gold-linear text-white shadow-gold transition group-hover:bg-gold group-hover:text-white md:h-[70px] md:w-[70px]">
+                    <Icon className="h-8 w-8" aria-hidden="true" />
                   </span>
                 </div>
-                <h3 className="mt-6 text-xl font-black text-gold">{item.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-gold-rich">{item.description}</p>
-                <div className="mt-5 flex flex-wrap gap-2">
+                <h3 className="mt-5 text-lg font-bold leading-[1.3] text-gold sm:mt-6 sm:text-[22px] md:mt-[25px]">
+                  {item.title}
+                </h3>
+                <p className="mt-4 text-[14px] leading-[1.6] text-gold-rich sm:mt-[18px] sm:text-[15px]">{item.description}</p>
+                <div className="mt-5 flex flex-wrap gap-2 sm:mt-[25px] sm:gap-[10px]">
                   {item.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="motion-chip inline-flex items-center gap-1 rounded-full border border-gold-soft bg-white px-3 py-1 text-xs font-black text-gold-rich"
+                      className="motion-chip inline-flex items-center gap-1 rounded-full border border-gold-soft bg-white px-3 py-1.5 text-[12px] font-semibold text-gold-rich"
                     >
                       <Check className="h-3 w-3 text-gold" aria-hidden="true" />
                       {tag}

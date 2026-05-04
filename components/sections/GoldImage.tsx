@@ -17,10 +17,8 @@ export function GoldImage({ src, alt, className, priority = false, sizes = "100v
         fill
         priority={priority}
         sizes={sizes}
-        className="object-cover grayscale contrast-125"
+        className="object-cover"
       />
-      <div className="absolute inset-0 bg-gold/30 mix-blend-color" aria-hidden="true" />
-      <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-gold-bright/20" aria-hidden="true" />
     </div>
   );
 }

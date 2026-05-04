@@ -49,7 +49,7 @@ const plans: Plan[] = [
 
 export function AdvisoryPlansSection() {
   return (
-    <section id="plans" className="bg-white py-20 sm:py-24">
+    <section id="plans" className="bg-white py-10 sm:py-14 md:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div data-animate>
           <SectionHeading
@@ -59,14 +59,14 @@ export function AdvisoryPlansSection() {
           />
         </div>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 md:mt-14 md:gap-6 lg:grid-cols-3">
           {plans.map((plan, index) => {
             const Icon = plan.icon;
 
             return (
               <article
                 key={plan.name}
-                className={`motion-card relative rounded-lg border p-7 shadow-gold ${
+                className={`motion-card relative rounded-lg border p-5 shadow-gold sm:p-6 md:p-7 ${
                   plan.highlighted
                     ? "border-gold bg-gold-linear text-white"
                     : "border-gold-soft bg-white text-gold-rich"
@@ -88,14 +88,18 @@ export function AdvisoryPlansSection() {
                   <Icon className="h-7 w-7" aria-hidden="true" />
                 </span>
 
-                <h3 className={`mt-6 text-2xl font-black ${plan.highlighted ? "text-white" : "text-gold"}`}>
+                <h3
+                  className={`mt-6 text-xl font-black sm:text-2xl ${plan.highlighted ? "text-white" : "text-gold"}`}
+                >
                   {plan.name}
                 </h3>
-                <p className={`mt-4 text-sm leading-7 ${plan.highlighted ? "text-white" : "text-gold-rich"}`}>
+                <p
+                  className={`mt-4 text-[14px] leading-[1.65] sm:text-sm sm:leading-7 ${plan.highlighted ? "text-white" : "text-gold-rich"}`}
+                >
                   {plan.description}
                 </p>
 
-                <div className="mt-7 grid gap-3">
+                <div className="mt-6 grid gap-2.5 sm:mt-7 sm:gap-3">
                   {plan.features.map((feature) => (
                     <div
                       key={feature}
@@ -111,7 +115,7 @@ export function AdvisoryPlansSection() {
 
                 <a
                   href="#contact"
-                  className={`motion-button mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full border px-5 py-3 text-sm font-black ${
+                  className={`motion-button mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full border px-5 py-3.5 text-sm font-black sm:mt-8 sm:py-3 ${
                     plan.highlighted
                       ? "border-white bg-white text-gold-rich hover:text-white"
                       : "border-gold bg-gold-linear text-white"

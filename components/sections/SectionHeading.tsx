@@ -20,11 +20,13 @@ export function SectionHeading({
         <span className="text-xs font-black uppercase tracking-normal text-gold-rich">{eyebrow}</span>
         <span className="h-px w-10 bg-gold" aria-hidden="true" />
       </div>
-      <h2 className="font-heading text-3xl font-black tracking-normal text-gold sm:text-4xl lg:text-5xl">
+      <h2 className="font-heading text-[24px] font-bold leading-[1.25] tracking-normal text-gold sm:text-[30px] lg:text-[36px]">
         {title}
       </h2>
       {description ? (
-        <p className="mt-5 text-base leading-8 text-gold-rich sm:text-lg">{description}</p>
+        <p className="mt-4 text-[15px] leading-[1.6] text-gold-rich sm:mt-5 sm:text-base md:text-[18px]">
+          {description}
+        </p>
       ) : null}
     </div>
   );

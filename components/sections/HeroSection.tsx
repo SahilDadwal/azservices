@@ -5,25 +5,20 @@ import type { ReactNode } from "react";
 import { ArrowRight, BadgeCheck, Building2, Check, Play, Users } from "lucide-react";
 import { GoldImage } from "./GoldImage";
 
-const rotatingWords = ["business setup", "corporate tax", "banking support"];
+const rotatingWords = ["Business Setup", "Corporate Tax", "Banking Support"];
 
 export function HeroSection() {
-  const [wordIndex, setWordIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setWordIndex((current) => (current + 1) % rotatingWords.length);
-    }, 2200);
-
-    return () => window.clearInterval(timer);
-  }, []);
+  const typedText = useTypedText(rotatingWords);
 
   return (
-    <section id="hero" className="relative isolate overflow-hidden bg-white pb-20 pt-32 sm:pt-36 lg:pb-28">
+    <section
+      id="hero"
+      className="relative isolate flex min-h-screen items-center overflow-hidden bg-white pb-12 pt-[96px] md:pb-16 md:pt-[120px] lg:pb-[60px]"
+    >
       <div className="absolute inset-0 -z-10 bg-gold-soft opacity-10" aria-hidden="true" />
       <div className="absolute inset-x-0 top-20 -z-10 h-px bg-gold-band" aria-hidden="true" />
 
-      <div className="mx-auto max-w-7xl px-5 text-center sm:px-8">
+      <div className="mx-auto w-full max-w-7xl px-5 text-center sm:px-8">
         <div
           className="mx-auto inline-flex items-center gap-2 rounded-full border border-gold-soft bg-white px-4 py-2 text-sm font-bold text-gold-rich shadow-gold"
           data-animate="zoom"
@@ -33,18 +28,20 @@ export function HeroSection() {
         </div>
 
         <h1
-          className="mx-auto mt-8 max-w-5xl font-heading text-4xl font-black leading-tight tracking-normal text-gold sm:text-6xl lg:text-7xl"
+          className="hero-title mx-auto mt-8 max-w-[900px] font-heading text-[26px] font-black leading-[1.1] tracking-normal text-gold sm:text-[34px] md:text-[48px] lg:text-[52px]"
           data-animate="zoom"
           style={{ transitionDelay: "90ms" }}
         >
-          Start, structure, and scale your UAE company with{" "}
-          <span className="inline-block bg-gold-linear bg-clip-text text-transparent">
-            {rotatingWords[wordIndex]}
+          Launch Your UAE Business With
+          <br />
+          <span className="typed-word">
+            {typedText}
+            <span className="typed-cursor" aria-hidden="true" />
           </span>
         </h1>
 
         <p
-          className="mx-auto mt-7 max-w-3xl text-lg leading-8 text-gold-rich sm:text-xl"
+          className="mx-auto mt-7 max-w-[600px] text-[15px] leading-[1.6] text-gold-rich sm:text-[17px] md:text-[19px]"
           data-animate
           style={{ transitionDelay: "160ms" }}
         >
@@ -53,33 +50,37 @@ export function HeroSection() {
           diligence, and bank account guidance.
         </p>
 
-        <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row" data-animate style={{ transitionDelay: "230ms" }}>
+        <div
+          className="mt-8 flex flex-col items-center justify-center gap-4 sm:mt-10 sm:flex-row sm:gap-5"
+          data-animate
+          style={{ transitionDelay: "230ms" }}
+        >
           <a
             href="#contact"
-            className="motion-button inline-flex w-full items-center justify-center gap-2 rounded-full border border-gold bg-gold-linear px-7 py-4 text-base font-black text-white shadow-gold transition hover:border-gold-bright sm:w-auto"
+            className="motion-button inline-flex w-full min-h-[52px] items-center justify-center gap-2 rounded-full border-2 border-gold bg-gold-linear px-6 py-[14px] text-base font-bold text-white shadow-gold transition hover:border-gold-bright sm:w-auto sm:min-h-[48px] sm:px-8 sm:py-4"
           >
             <span>Book Free Consultation</span>
             <ArrowRight className="motion-arrow h-5 w-5" aria-hidden="true" />
           </a>
           <a
             href="#services"
-            className="motion-button inline-flex w-full items-center justify-center gap-2 rounded-full border border-gold-soft bg-white px-7 py-4 text-base font-black text-gold-rich shadow-gold transition hover:border-gold hover:text-white sm:w-auto"
+            className="motion-button inline-flex w-full min-h-[52px] items-center justify-center gap-2 rounded-full border-2 border-gold-soft bg-white px-6 py-[14px] text-base font-bold text-gold-rich shadow-gold transition hover:border-gold hover:text-white sm:w-auto sm:min-h-[48px] sm:px-8 sm:py-4"
           >
             <Play className="h-5 w-5" aria-hidden="true" />
             <span>Explore Services</span>
           </a>
         </div>
 
-        <div className="relative mx-auto mt-14 max-w-5xl" data-animate style={{ transitionDelay: "320ms" }}>
+        <div className="relative mx-auto mt-10 max-w-[900px] md:mt-14 lg:mt-[60px]" data-animate style={{ transitionDelay: "320ms" }}>
           <GoldImage
             src="/assets/img/about/about-18.webp"
             alt="Dubai advisory workspace"
-            className="aspect-[16/10]"
+            className="aspect-[16/10] rounded-[20px] p-[15px]"
             priority
-            sizes="(min-width: 1024px) 960px, 92vw"
+            sizes="(min-width: 1024px) 900px, 92vw"
           />
 
-          <div className="pointer-events-none absolute -left-4 top-10 hidden w-72 sm:block lg:-left-8 lg:top-24">
+          <div className="pointer-events-none absolute -left-4 top-[20%] hidden w-[286px] sm:block lg:-left-[60px]">
             <HeroMetric
               className="float-card"
               icon={<Building2 className="h-5 w-5" aria-hidden="true" />}
@@ -88,7 +89,7 @@ export function HeroSection() {
             />
           </div>
 
-          <div className="pointer-events-none absolute -right-4 bottom-10 hidden w-72 sm:block lg:-right-8 lg:bottom-24">
+          <div className="pointer-events-none absolute bottom-[15%] -right-4 hidden w-[286px] sm:block lg:-right-[60px]">
             <HeroMetric
               className="float-card-reverse"
               icon={<Users className="h-5 w-5" aria-hidden="true" />}
@@ -112,6 +113,38 @@ export function HeroSection() {
       </div>
     </section>
   );
+}
+
+function useTypedText(words: string[]) {
+  const [wordIndex, setWordIndex] = useState(0);
+  const [letterCount, setLetterCount] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentWord = words[wordIndex];
+    const isComplete = letterCount === currentWord.length;
+    const isEmpty = letterCount === 0;
+    const delay = isComplete && !isDeleting ? 1300 : isDeleting ? 38 : 78;
+
+    const timer = window.setTimeout(() => {
+      if (isComplete && !isDeleting) {
+        setIsDeleting(true);
+        return;
+      }
+
+      if (isEmpty && isDeleting) {
+        setIsDeleting(false);
+        setWordIndex((current) => (current + 1) % words.length);
+        return;
+      }
+
+      setLetterCount((count) => count + (isDeleting ? -1 : 1));
+    }, delay);
+
+    return () => window.clearTimeout(timer);
+  }, [isDeleting, letterCount, wordIndex, words]);
+
+  return words[wordIndex].slice(0, letterCount);
 }
 
 function HeroMetric({

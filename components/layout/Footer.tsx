@@ -20,19 +20,22 @@ const links = [
 export function Footer() {
   return (
     <footer className="border-t border-gold-soft bg-white">
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-8 lg:grid-cols-[1.25fr_0.75fr_0.75fr]">
+      <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 sm:px-8 md:gap-10 md:py-14 lg:grid-cols-[1.25fr_0.75fr_0.75fr]">
         <div>
           <div className="flex items-center gap-3">
-            <span className="motion-icon grid h-12 w-12 place-items-center rounded-lg border border-gold bg-gold-linear text-lg font-black text-white">
+            <span
+              className="motion-icon grid h-12 w-12 shrink-0 place-items-center rounded-lg border border-gold bg-gold-linear font-heading text-xl font-black tracking-tight text-white shadow-gold"
+              aria-hidden="true"
+            >
               AZ
             </span>
             <div>
-              <h2 className="font-heading text-2xl font-black text-gold">AZ SERVICES L.L.C-FZ</h2>
+              <h2 className="font-heading text-xl font-black text-gold sm:text-2xl">AZ SERVICES L.L.C-FZ</h2>
               <p className="mt-1 text-sm font-bold text-gold-rich">License: 2533175.01</p>
             </div>
           </div>
 
-          <p className="mt-6 max-w-xl text-base leading-8 text-gold-rich">
+          <p className="mt-6 max-w-xl text-[15px] leading-[1.65] text-gold-rich sm:text-base sm:leading-8">
             Premium UAE business setup and corporate advisory for founders, investors, and
             international companies building from Dubai.
           </p>

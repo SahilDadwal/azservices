@@ -110,9 +110,9 @@ export function ProcessSection() {
   const ActiveIcon = active.icon;
 
   return (
-    <section className="bg-white py-20 sm:py-24" id="process">
+    <section className="bg-white py-10 sm:py-14 md:py-20 lg:py-24" id="process">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="rounded-lg border border-gold-soft bg-white p-4 shadow-gold sm:p-6" data-animate>
+        <div className="rounded-lg border border-gold-soft bg-white p-4 shadow-gold sm:p-5 md:p-6" data-animate>
           <div className="grid gap-3 lg:grid-cols-4">
             {tabs.map((tab) => {
               const Icon = tab.icon;
@@ -149,16 +149,16 @@ export function ProcessSection() {
 
           <div
             key={active.id}
-            className="tab-panel-motion grid items-center gap-10 px-1 py-10 lg:grid-cols-[0.9fr_1.1fr] lg:px-6"
+            className="tab-panel-motion grid items-center gap-8 px-1 py-8 md:gap-10 md:py-10 lg:grid-cols-[0.9fr_1.1fr] lg:px-6"
           >
             <div data-animate="left">
               <span className="grid h-14 w-14 place-items-center rounded-lg border border-gold-soft bg-gold/10 text-gold">
                 <ActiveIcon className="h-7 w-7" aria-hidden="true" />
               </span>
-              <h2 className="mt-6 font-heading text-3xl font-black leading-tight text-gold sm:text-4xl">
+              <h2 className="mt-6 font-heading text-[26px] font-black leading-tight text-gold sm:text-3xl md:text-4xl">
                 {active.title}
               </h2>
-              <p className="mt-5 text-base leading-8 text-gold-rich">{active.description}</p>
+              <p className="mt-5 text-[15px] leading-[1.65] text-gold-rich sm:text-base sm:leading-8">{active.description}</p>
 
               <div className="mt-7 grid gap-3">
                 {active.bullets.map((bullet) => (

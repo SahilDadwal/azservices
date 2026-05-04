@@ -39,7 +39,7 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="bg-white py-20 sm:py-24">
+    <section id="contact" className="bg-white py-10 sm:py-14 md:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div data-animate>
           <SectionHeading
@@ -49,15 +49,15 @@ export function ContactSection() {
           />
         </div>
 
-        <div className="mt-14 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="rounded-lg border border-gold-soft bg-white p-6 shadow-gold sm:p-8" data-animate="left">
-            <h3 className="text-2xl font-black text-gold">Company details</h3>
-            <p className="mt-4 text-base leading-8 text-gold-rich">
+        <div className="mt-10 grid gap-6 md:mt-14 md:gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="rounded-lg border border-gold-soft bg-white p-5 shadow-gold sm:p-6 md:p-8" data-animate="left">
+            <h3 className="text-xl font-black text-gold sm:text-2xl">Company details</h3>
+            <p className="mt-4 text-[15px] leading-[1.65] text-gold-rich sm:text-base sm:leading-8">
               Clean documentation and clear communication are the foundation of every company
               setup, banking, tax, and compliance engagement.
             </p>
 
-            <div className="mt-8 grid gap-4">
+            <div className="mt-6 grid gap-3 sm:mt-8 sm:gap-4">
               <InfoItem icon={<Building2 className="h-5 w-5" aria-hidden="true" />} title="Company Name" text={company.name} />
               <InfoItem icon={<BadgeCheck className="h-5 w-5" aria-hidden="true" />} title="License" text={company.license} />
               <InfoItem icon={<MapPin className="h-5 w-5" aria-hidden="true" />} title="Address" text={company.address} />
@@ -70,23 +70,25 @@ export function ContactSection() {
             </div>
           </div>
 
-          <div className="rounded-lg border border-gold-soft bg-white p-6 shadow-gold sm:p-8" data-animate="right">
+          <div className="rounded-lg border border-gold-soft bg-white p-5 shadow-gold sm:p-6 md:p-8" data-animate="right">
             <div className="flex items-center gap-3">
               <span className="motion-icon grid h-12 w-12 place-items-center rounded-lg border border-gold-soft bg-gold/10 text-gold">
                 <Send className="h-6 w-6" aria-hidden="true" />
               </span>
               <div>
-                <h3 className="text-2xl font-black text-gold">Send enquiry</h3>
-                <p className="text-sm font-bold text-gold-rich">Business setup, tax, accounting, or compliance</p>
+                <h3 className="text-xl font-black text-gold sm:text-2xl">Send enquiry</h3>
+                <p className="text-xs font-bold text-gold-rich sm:text-sm">
+                  Business setup, tax, accounting, or compliance
+                </p>
               </div>
             </div>
 
-            <form className="mt-8 grid gap-5" onSubmit={handleSubmit}>
-              <div className="grid gap-5 sm:grid-cols-2">
+            <form className="mt-6 grid gap-4 sm:mt-8 sm:gap-5" onSubmit={handleSubmit}>
+              <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
                 <Field label="Full name" name="name" placeholder="Enter your full name" required />
                 <Field label="Email address" name="email" type="email" placeholder="Enter your email address" required />
               </div>
-              <div className="grid gap-5 sm:grid-cols-2">
+              <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
                 <Field label="Phone" name="phone" type="tel" placeholder="Enter your phone number" />
                 <Field label="Subject" name="subject" placeholder="Business setup enquiry" required />
               </div>
@@ -97,13 +99,13 @@ export function ContactSection() {
                   rows={5}
                   required
                   placeholder="Tell us about your business activity, setup stage, and preferred UAE structure"
-                  className="min-h-36 rounded-lg border border-gold-soft bg-white px-4 py-3 text-base font-medium leading-7 text-gold-rich outline-none transition placeholder:text-gold-soft focus:border-gold focus:ring-2 focus:ring-gold/30"
+                  className="min-h-[140px] rounded-lg border border-gold-soft bg-white px-4 py-3 text-base font-medium leading-7 text-gold-rich outline-none transition placeholder:text-gold-soft focus:border-gold focus:ring-2 focus:ring-gold/30 sm:min-h-36"
                 />
               </label>
 
               <button
                 type="submit"
-                className="motion-button inline-flex items-center justify-center gap-2 rounded-full border border-gold bg-gold-linear px-7 py-4 text-base font-black text-white shadow-gold"
+                className="motion-button inline-flex items-center justify-center gap-2 rounded-full border border-gold bg-gold-linear px-7 py-[14px] text-base font-black text-white shadow-gold sm:py-4"
               >
                 <span>Send Message</span>
                 <ArrowRight className="motion-arrow h-5 w-5" aria-hidden="true" />
@@ -173,7 +175,7 @@ function Field({
         type={type}
         required={required}
         placeholder={placeholder}
-        className="rounded-lg border border-gold-soft bg-white px-4 py-3 text-base font-medium text-gold-rich outline-none transition placeholder:text-gold-soft focus:border-gold focus:ring-2 focus:ring-gold/30"
+        className="min-h-[44px] rounded-lg border border-gold-soft bg-white px-4 py-3 text-base font-medium text-gold-rich outline-none transition placeholder:text-gold-soft focus:border-gold focus:ring-2 focus:ring-gold/30"
       />
     </label>
   );

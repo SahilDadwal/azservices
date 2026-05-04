@@ -1,7 +1,4 @@
-"use client";
-
-import { useState } from "react";
-import { ArrowRight, Menu, X } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const navItems = [
   { label: "Home", href: "#hero" },
@@ -13,13 +10,14 @@ const navItems = [
 ];
 
 export function Header() {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-gold-soft/50 bg-white/90 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
-        <a href="#hero" className="flex items-center gap-3" onClick={() => setIsOpen(false)}>
-          <span className="motion-icon grid h-11 w-11 place-items-center rounded-lg border border-gold bg-gold-linear text-lg font-black text-white shadow-gold">
+        <a href="#hero" className="flex items-center gap-3">
+          <span
+            className="motion-icon grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-gold bg-gold-linear font-heading text-lg font-black tracking-tight text-white shadow-gold"
+            aria-hidden="true"
+          >
             AZ
           </span>
           <span className="leading-tight">
@@ -46,47 +44,12 @@ export function Header() {
 
         <a
           href="#contact"
-          className="motion-button hidden items-center gap-2 rounded-full border border-gold bg-gold-linear px-5 py-3 text-sm font-bold text-white shadow-gold transition hover:border-gold-bright lg:inline-flex"
+          className="motion-button inline-flex shrink-0 items-center gap-2 rounded-full border border-gold bg-gold-linear px-6 py-3.5 text-sm font-bold text-white shadow-gold transition hover:border-gold-bright sm:px-5 sm:py-3"
         >
           <span>Book Consultation</span>
           <ArrowRight className="motion-arrow h-4 w-4" aria-hidden="true" />
         </a>
-
-        <button
-          type="button"
-          className="grid h-11 w-11 place-items-center rounded-lg border border-gold-soft bg-white text-gold shadow-gold lg:hidden"
-          aria-label="Toggle navigation"
-          aria-expanded={isOpen}
-          onClick={() => setIsOpen((value) => !value)}
-        >
-          {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
       </div>
-
-      {isOpen ? (
-        <div className="mx-5 mb-5 rounded-lg border border-gold-soft bg-white p-4 shadow-gold lg:hidden">
-          <nav className="grid gap-2" aria-label="Mobile navigation">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="rounded-lg border border-gold-soft/60 px-4 py-3 text-sm font-bold text-gold-rich transition hover:border-gold hover:text-gold"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.label}
-              </a>
-            ))}
-            <a
-              href="#contact"
-              className="motion-button mt-2 inline-flex items-center justify-center gap-2 rounded-full border border-gold bg-gold-linear px-5 py-3 text-sm font-bold text-white"
-              onClick={() => setIsOpen(false)}
-            >
-              <span>Book Consultation</span>
-              <ArrowRight className="motion-arrow h-4 w-4" aria-hidden="true" />
-            </a>
-          </nav>
-        </div>
-      ) : null}
     </header>
   );
 }
