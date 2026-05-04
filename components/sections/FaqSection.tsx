@@ -38,15 +38,22 @@ export function FaqSection() {
   return (
     <section id="faq" className="bg-white py-20 sm:py-24">
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
-        <SectionHeading
-          eyebrow="FAQ"
-          title="Common questions before setting up in the UAE"
-          description="A concise starting point for founders comparing free zone, mainland, offshore, banking, and compliance requirements."
-        />
+        <div data-animate>
+          <SectionHeading
+            eyebrow="FAQ"
+            title="Common questions before setting up in the UAE"
+            description="A concise starting point for founders comparing free zone, mainland, offshore, banking, and compliance requirements."
+          />
+        </div>
 
         <div className="mt-12 grid gap-4">
-          {faqs.map((faq) => (
-            <details key={faq.question} className="group rounded-lg border border-gold-soft bg-white p-5 shadow-gold">
+          {faqs.map((faq, index) => (
+            <details
+              key={faq.question}
+              className="mini-lift group rounded-lg border border-gold-soft bg-white p-5 shadow-gold"
+              data-animate
+              style={{ transitionDelay: `${index * 60}ms` }}
+            >
               <summary className="flex cursor-pointer items-center justify-between gap-4 text-left">
                 <span className="font-heading text-lg font-black text-gold">{faq.question}</span>
                 <ChevronDown className="h-5 w-5 shrink-0 text-gold transition group-open:rotate-180" aria-hidden="true" />

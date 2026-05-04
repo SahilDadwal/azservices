@@ -23,7 +23,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-8 lg:grid-cols-[1.25fr_0.75fr_0.75fr]">
         <div>
           <div className="flex items-center gap-3">
-            <span className="grid h-12 w-12 place-items-center rounded-lg border border-gold bg-gold-linear text-lg font-black text-white">
+            <span className="motion-icon grid h-12 w-12 place-items-center rounded-lg border border-gold bg-gold-linear text-lg font-black text-white">
               AZ
             </span>
             <div>
@@ -74,7 +74,7 @@ export function Footer() {
 
       <div className="border-t border-gold-soft bg-gold-linear">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-5 text-sm font-bold text-white sm:flex-row sm:items-center sm:justify-between sm:px-8">
-          <p>Copyright {new Date().getFullYear()} © AZ SERVICES L.L.C-FZ.</p>
+          <p>Copyright {new Date().getFullYear()} &copy; AZ SERVICES L.L.C-FZ.</p>
           <p>Dubai business setup, tax, accounting, and compliance advisory.</p>
         </div>
       </div>

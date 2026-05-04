@@ -51,24 +51,28 @@ export function AdvisoryPlansSection() {
   return (
     <section id="plans" className="bg-white py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <SectionHeading
-          eyebrow="Advisory plans"
-          title="Choose the support model that fits your stage"
-          description="Each engagement can be shaped around your exact activity, jurisdiction, ownership, tax, accounting, and banking requirements."
-        />
+        <div data-animate>
+          <SectionHeading
+            eyebrow="Advisory plans"
+            title="Choose the support model that fits your stage"
+            description="Each engagement can be shaped around your exact activity, jurisdiction, ownership, tax, accounting, and banking requirements."
+          />
+        </div>
 
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
-          {plans.map((plan) => {
+          {plans.map((plan, index) => {
             const Icon = plan.icon;
 
             return (
               <article
                 key={plan.name}
-                className={`relative rounded-lg border p-7 shadow-gold transition hover:shadow-gold-lg ${
+                className={`motion-card relative rounded-lg border p-7 shadow-gold ${
                   plan.highlighted
                     ? "border-gold bg-gold-linear text-white"
                     : "border-gold-soft bg-white text-gold-rich"
                 }`}
+                data-animate="flip"
+                style={{ transitionDelay: `${index * 90}ms` }}
               >
                 {plan.highlighted ? (
                   <span className="absolute right-5 top-5 rounded-full border border-white bg-white px-3 py-1 text-xs font-black uppercase tracking-normal text-gold-rich">
@@ -79,7 +83,7 @@ export function AdvisoryPlansSection() {
                 <span
                   className={`grid h-14 w-14 place-items-center rounded-lg border ${
                     plan.highlighted ? "border-white bg-white text-gold" : "border-gold-soft bg-gold/10 text-gold"
-                  }`}
+                  } motion-icon`}
                 >
                   <Icon className="h-7 w-7" aria-hidden="true" />
                 </span>
@@ -107,14 +111,14 @@ export function AdvisoryPlansSection() {
 
                 <a
                   href="#contact"
-                  className={`mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full border px-5 py-3 text-sm font-black ${
+                  className={`motion-button mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full border px-5 py-3 text-sm font-black ${
                     plan.highlighted
-                      ? "border-white bg-white text-gold-rich"
+                      ? "border-white bg-white text-gold-rich hover:text-white"
                       : "border-gold bg-gold-linear text-white"
                   }`}
                 >
-                  Discuss This Plan
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  <span>Discuss This Plan</span>
+                  <ArrowRight className="motion-arrow h-4 w-4" aria-hidden="true" />
                 </a>
               </article>
             );

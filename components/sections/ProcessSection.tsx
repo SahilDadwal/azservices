@@ -112,7 +112,7 @@ export function ProcessSection() {
   return (
     <section className="bg-white py-20 sm:py-24" id="process">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="rounded-lg border border-gold-soft bg-white p-4 shadow-gold sm:p-6">
+        <div className="rounded-lg border border-gold-soft bg-white p-4 shadow-gold sm:p-6" data-animate>
           <div className="grid gap-3 lg:grid-cols-4">
             {tabs.map((tab) => {
               const Icon = tab.icon;
@@ -123,7 +123,7 @@ export function ProcessSection() {
                   key={tab.id}
                   type="button"
                   onClick={() => setActiveId(tab.id)}
-                  className={`rounded-lg border p-4 text-left transition ${
+                  className={`motion-tab rounded-lg border p-4 text-left transition ${
                     isActive
                       ? "border-gold bg-gold-linear text-white shadow-gold"
                       : "border-gold-soft bg-white text-gold-rich hover:border-gold hover:text-gold"
@@ -133,7 +133,7 @@ export function ProcessSection() {
                     <span
                       className={`grid h-11 w-11 place-items-center rounded-lg border ${
                         isActive ? "border-white bg-white text-gold" : "border-gold-soft bg-gold/10 text-gold"
-                      }`}
+                      } motion-icon`}
                     >
                       <Icon className="h-5 w-5" aria-hidden="true" />
                     </span>
@@ -147,8 +147,11 @@ export function ProcessSection() {
             })}
           </div>
 
-          <div className="grid items-center gap-10 px-1 py-10 lg:grid-cols-[0.9fr_1.1fr] lg:px-6">
-            <div>
+          <div
+            key={active.id}
+            className="tab-panel-motion grid items-center gap-10 px-1 py-10 lg:grid-cols-[0.9fr_1.1fr] lg:px-6"
+          >
+            <div data-animate="left">
               <span className="grid h-14 w-14 place-items-center rounded-lg border border-gold-soft bg-gold/10 text-gold">
                 <ActiveIcon className="h-7 w-7" aria-hidden="true" />
               </span>
@@ -168,7 +171,7 @@ export function ProcessSection() {
 
               <div className="mt-8 grid gap-3 sm:grid-cols-3">
                 {active.stats.map(([number, label]) => (
-                  <div key={`${number}-${label}`} className="rounded-lg border border-gold-soft bg-white p-4 text-center shadow-gold">
+                  <div key={`${number}-${label}`} className="mini-lift rounded-lg border border-gold-soft bg-white p-4 text-center shadow-gold">
                     <p className="font-heading text-2xl font-black text-gold">{number}</p>
                     <p className="mt-1 text-xs font-black uppercase tracking-normal text-gold-rich">{label}</p>
                   </div>
@@ -176,14 +179,14 @@ export function ProcessSection() {
               </div>
             </div>
 
-            <div className="relative">
+            <div className="relative" data-animate="right">
               <GoldImage
                 src={active.image}
                 alt={`${active.label} advisory process`}
                 className="aspect-[16/11]"
                 sizes="(min-width: 1024px) 680px, 92vw"
               />
-              <div className="absolute bottom-5 left-5 max-w-xs rounded-lg border border-gold-soft bg-white p-4 shadow-gold">
+              <div className="float-card absolute bottom-5 left-5 max-w-xs rounded-lg border border-gold-soft bg-white p-4 shadow-gold">
                 <div className="flex items-center gap-3">
                   <Landmark className="h-6 w-6 text-gold" aria-hidden="true" />
                   <p className="text-sm font-black leading-5 text-gold-rich">

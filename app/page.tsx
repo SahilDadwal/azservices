@@ -1,5 +1,6 @@
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { ScrollAnimations } from "@/components/layout/ScrollAnimations";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { AdvisoryPlansSection } from "@/components/sections/AdvisoryPlansSection";
 import { ContactSection } from "@/components/sections/ContactSection";
@@ -15,6 +16,7 @@ import { WhyChooseUsSection } from "@/components/sections/WhyChooseUsSection";
 export default function Home() {
   return (
     <>
+      <ScrollAnimations />
       <Header />
       <main>
         <HeroSection />

@@ -40,30 +40,36 @@ export function WhyChooseUsSection() {
   return (
     <section className="bg-white py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <SectionHeading
-          eyebrow="Why clients choose us"
-          title="Personalized support for founders and international businesses"
-          description="The advisory relationship is built around clarity, responsiveness, and practical execution from the first idea through ongoing corporate care."
-        />
+        <div data-animate>
+          <SectionHeading
+            eyebrow="Why clients choose us"
+            title="Personalized support for founders and international businesses"
+            description="The advisory relationship is built around clarity, responsiveness, and practical execution from the first idea through ongoing corporate care."
+          />
+        </div>
 
         <div className="mt-16 grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <GoldImage
-            src="/assets/img/misc/misc-5.webp"
-            alt="Premium consulting workspace"
-            className="aspect-[4/5] lg:aspect-[5/6]"
-            sizes="(min-width: 1024px) 520px, 92vw"
-          />
+          <div data-animate="left">
+            <GoldImage
+              src="/assets/img/misc/misc-5.webp"
+              alt="Premium consulting workspace"
+              className="aspect-[4/5] lg:aspect-[5/6]"
+              sizes="(min-width: 1024px) 520px, 92vw"
+            />
+          </div>
 
           <div className="grid gap-5 sm:grid-cols-2">
-            {reasons.map((reason) => {
+            {reasons.map((reason, index) => {
               const Icon = reason.icon;
 
               return (
                 <article
                   key={reason.title}
-                  className="rounded-lg border border-gold-soft bg-white p-6 shadow-gold transition hover:border-gold hover:shadow-gold-lg"
+                  className="motion-card rounded-lg border border-gold-soft bg-white p-6 shadow-gold"
+                  data-animate="flip"
+                  style={{ transitionDelay: `${index * 80}ms` }}
                 >
-                  <span className="grid h-12 w-12 place-items-center rounded-lg border border-gold-soft bg-gold/10 text-gold">
+                  <span className="motion-icon grid h-12 w-12 place-items-center rounded-lg border border-gold-soft bg-gold/10 text-gold">
                     <Icon className="h-6 w-6" aria-hidden="true" />
                   </span>
                   <h3 className="mt-5 text-xl font-black text-gold">{reason.title}</h3>

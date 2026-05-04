@@ -81,14 +81,16 @@ export function ServicesSection() {
   return (
     <section id="services" className="bg-white py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <SectionHeading
-          eyebrow="Services"
-          title="A complete corporate advisory desk for UAE business growth"
-          description="From initial company formation through banking, tax, accounting, due diligence, and compliance, AZ Services keeps your corporate journey organized and commercially practical."
-        />
+        <div data-animate>
+          <SectionHeading
+            eyebrow="Services"
+            title="A complete corporate advisory desk for UAE business growth"
+            description="From initial company formation through banking, tax, accounting, due diligence, and compliance, AZ Services keeps your corporate journey organized and commercially practical."
+          />
+        </div>
 
         <div className="mt-16 grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr]">
-          <div>
+          <div data-animate="left">
             <span className="inline-flex rounded-full border border-gold-soft bg-gold/10 px-4 py-2 text-xs font-black uppercase tracking-normal text-gold-rich">
               One-stop solution
             </span>
@@ -102,31 +104,35 @@ export function ServicesSection() {
             </p>
             <a
               href="#contact"
-              className="mt-8 inline-flex items-center gap-2 rounded-full border border-gold bg-gold-linear px-6 py-3 text-sm font-black text-white shadow-gold"
+              className="motion-button mt-8 inline-flex items-center gap-2 rounded-full border border-gold bg-gold-linear px-6 py-3 text-sm font-black text-white shadow-gold"
             >
-              Request Advisory
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              <span>Request Advisory</span>
+              <ArrowRight className="motion-arrow h-4 w-4" aria-hidden="true" />
             </a>
           </div>
 
-          <GoldImage
-            src="/assets/img/services/services-1.webp"
-            alt="Business setup services visual"
-            className="aspect-[16/11]"
-            sizes="(min-width: 1024px) 620px, 92vw"
-          />
+          <div data-animate="right">
+            <GoldImage
+              src="/assets/img/services/services-1.webp"
+              alt="Business setup services visual"
+              className="aspect-[16/11]"
+              sizes="(min-width: 1024px) 620px, 92vw"
+            />
+          </div>
         </div>
 
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => {
+          {services.map((service, index) => {
             const Icon = service.icon;
 
             return (
               <article
                 key={service.title}
-                className="rounded-lg border border-gold-soft bg-white p-6 shadow-gold transition hover:border-gold hover:shadow-gold-lg"
+                className="motion-card rounded-lg border border-gold-soft bg-white p-6 shadow-gold"
+                data-animate="flip"
+                style={{ transitionDelay: `${index * 60}ms` }}
               >
-                <span className="grid h-12 w-12 place-items-center rounded-lg border border-gold-soft bg-gold/10 text-gold">
+                <span className="motion-icon grid h-12 w-12 place-items-center rounded-lg border border-gold-soft bg-gold/10 text-gold">
                   <Icon className="h-6 w-6" aria-hidden="true" />
                 </span>
                 <h3 className="mt-5 text-xl font-black leading-tight text-gold">{service.title}</h3>

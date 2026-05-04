@@ -24,42 +24,53 @@ export function HeroSection() {
       <div className="absolute inset-x-0 top-20 -z-10 h-px bg-gold-band" aria-hidden="true" />
 
       <div className="mx-auto max-w-7xl px-5 text-center sm:px-8">
-        <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-gold-soft bg-white px-4 py-2 text-sm font-bold text-gold-rich shadow-gold">
+        <div
+          className="mx-auto inline-flex items-center gap-2 rounded-full border border-gold-soft bg-white px-4 py-2 text-sm font-bold text-gold-rich shadow-gold"
+          data-animate="zoom"
+        >
           <BadgeCheck className="h-4 w-4 text-gold" aria-hidden="true" />
           Premium UAE business advisory from Dubai
         </div>
 
-        <h1 className="mx-auto mt-8 max-w-5xl font-heading text-4xl font-black leading-tight tracking-normal text-gold sm:text-6xl lg:text-7xl">
+        <h1
+          className="mx-auto mt-8 max-w-5xl font-heading text-4xl font-black leading-tight tracking-normal text-gold sm:text-6xl lg:text-7xl"
+          data-animate="zoom"
+          style={{ transitionDelay: "90ms" }}
+        >
           Start, structure, and scale your UAE company with{" "}
           <span className="inline-block bg-gold-linear bg-clip-text text-transparent">
             {rotatingWords[wordIndex]}
           </span>
         </h1>
 
-        <p className="mx-auto mt-7 max-w-3xl text-lg leading-8 text-gold-rich sm:text-xl">
+        <p
+          className="mx-auto mt-7 max-w-3xl text-lg leading-8 text-gold-rich sm:text-xl"
+          data-animate
+          style={{ transitionDelay: "160ms" }}
+        >
           AZ SERVICES L.L.C-FZ helps entrepreneurs and international companies establish,
           manage, and grow in the UAE with formation, tax, accounting, compliance, due
           diligence, and bank account guidance.
         </p>
 
-        <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row" data-animate style={{ transitionDelay: "230ms" }}>
           <a
             href="#contact"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-gold bg-gold-linear px-7 py-4 text-base font-black text-white shadow-gold transition hover:border-gold-bright sm:w-auto"
+            className="motion-button inline-flex w-full items-center justify-center gap-2 rounded-full border border-gold bg-gold-linear px-7 py-4 text-base font-black text-white shadow-gold transition hover:border-gold-bright sm:w-auto"
           >
-            Book Free Consultation
-            <ArrowRight className="h-5 w-5" aria-hidden="true" />
+            <span>Book Free Consultation</span>
+            <ArrowRight className="motion-arrow h-5 w-5" aria-hidden="true" />
           </a>
           <a
             href="#services"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-gold-soft bg-white px-7 py-4 text-base font-black text-gold-rich shadow-gold transition hover:border-gold hover:text-gold sm:w-auto"
+            className="motion-button inline-flex w-full items-center justify-center gap-2 rounded-full border border-gold-soft bg-white px-7 py-4 text-base font-black text-gold-rich shadow-gold transition hover:border-gold hover:text-white sm:w-auto"
           >
             <Play className="h-5 w-5" aria-hidden="true" />
-            Explore Services
+            <span>Explore Services</span>
           </a>
         </div>
 
-        <div className="relative mx-auto mt-14 max-w-5xl">
+        <div className="relative mx-auto mt-14 max-w-5xl" data-animate style={{ transitionDelay: "320ms" }}>
           <GoldImage
             src="/assets/img/about/about-18.webp"
             alt="Dubai advisory workspace"
@@ -68,16 +79,18 @@ export function HeroSection() {
             sizes="(min-width: 1024px) 960px, 92vw"
           />
 
-          <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:absolute lg:-left-8 lg:bottom-10 lg:mt-0 lg:w-72">
+          <div className="pointer-events-none absolute -left-4 top-10 hidden w-72 sm:block lg:-left-8 lg:top-24">
             <HeroMetric
+              className="float-card"
               icon={<Building2 className="h-5 w-5" aria-hidden="true" />}
               value="UAE"
               label="Free zone, mainland, and offshore guidance"
             />
           </div>
 
-          <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:absolute lg:-right-8 lg:top-12 lg:mt-0 lg:w-72">
+          <div className="pointer-events-none absolute -right-4 bottom-10 hidden w-72 sm:block lg:-right-8 lg:bottom-24">
             <HeroMetric
+              className="float-card-reverse"
               icon={<Users className="h-5 w-5" aria-hidden="true" />}
               value="100%"
               label="Client-focused support from setup to operations"
@@ -85,11 +98,11 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="mx-auto mt-10 grid max-w-4xl gap-3 sm:grid-cols-3">
+        <div className="mx-auto mt-10 grid max-w-4xl gap-3 sm:grid-cols-3" data-animate style={{ transitionDelay: "410ms" }}>
           {["Trade license advisory", "Corporate tax registration", "Bank account readiness"].map((item) => (
             <div
               key={item}
-              className="flex items-center justify-center gap-2 rounded-lg border border-gold-soft bg-white px-4 py-3 text-sm font-bold text-gold-rich shadow-gold"
+              className="mini-lift flex items-center justify-center gap-2 rounded-lg border border-gold-soft bg-white px-4 py-3 text-sm font-bold text-gold-rich shadow-gold"
             >
               <Check className="h-4 w-4 text-gold" aria-hidden="true" />
               {item}
@@ -102,18 +115,20 @@ export function HeroSection() {
 }
 
 function HeroMetric({
+  className = "",
   icon,
   value,
   label
 }: {
+  className?: string;
   icon: ReactNode;
   value: string;
   label: string;
 }) {
   return (
-    <div className="rounded-lg border border-gold-soft bg-white p-4 text-left shadow-gold-lg">
+    <div className={`rounded-lg border border-gold-soft bg-white p-4 text-left shadow-gold-lg ${className}`}>
       <div className="flex items-center gap-3">
-        <span className="grid h-11 w-11 place-items-center rounded-lg border border-gold-soft bg-gold/10 text-gold">
+        <span className="motion-icon grid h-11 w-11 place-items-center rounded-lg border border-gold-soft bg-gold/10 text-gold">
           {icon}
         </span>
         <div>

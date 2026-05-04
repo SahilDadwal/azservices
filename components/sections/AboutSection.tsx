@@ -28,14 +28,16 @@ export function AboutSection() {
   return (
     <section id="about" className="bg-white py-20 sm:py-24">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:gap-16">
-        <GoldImage
-          src="/assets/img/about/about-portrait-7.webp"
-          alt="AZ Services business advisory consultation"
-          className="aspect-[4/5]"
-          sizes="(min-width: 1024px) 560px, 92vw"
-        />
+        <div data-animate="left">
+          <GoldImage
+            src="/assets/img/about/about-portrait-7.webp"
+            alt="AZ Services business advisory consultation"
+            className="aspect-[4/5]"
+            sizes="(min-width: 1024px) 560px, 92vw"
+          />
+        </div>
 
-        <div>
+        <div data-animate="right">
           <span className="inline-flex rounded-full border border-gold-soft bg-gold/10 px-4 py-2 text-xs font-black uppercase tracking-normal text-gold-rich">
             About AZ Services
           </span>
@@ -60,8 +62,13 @@ export function AboutSection() {
               const Icon = value.icon;
 
               return (
-                <div key={value.title} className="rounded-lg border border-gold-soft bg-white p-5 shadow-gold">
-                  <Icon className="h-7 w-7 text-gold" aria-hidden="true" />
+                <div
+                  key={value.title}
+                  className="motion-card rounded-lg border border-gold-soft bg-white p-5 shadow-gold"
+                  data-animate="flip"
+                  style={{ transitionDelay: `${indexDelay(value.title)}ms` }}
+                >
+                  <Icon className="motion-icon h-7 w-7 text-gold" aria-hidden="true" />
                   <h3 className="mt-4 text-lg font-black text-gold">{value.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-gold-rich">{value.description}</p>
                 </div>
@@ -72,20 +79,24 @@ export function AboutSection() {
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
             <a
               href="#services"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-gold bg-gold-linear px-6 py-3 text-sm font-black text-white shadow-gold"
+              className="motion-button inline-flex items-center justify-center gap-2 rounded-full border border-gold bg-gold-linear px-6 py-3 text-sm font-black text-white shadow-gold"
             >
-              View Services
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              <span>View Services</span>
+              <ArrowRight className="motion-arrow h-4 w-4" aria-hidden="true" />
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center rounded-full border border-gold-soft bg-white px-6 py-3 text-sm font-black text-gold-rich shadow-gold transition hover:border-gold hover:text-gold"
+              className="motion-button inline-flex items-center justify-center rounded-full border border-gold-soft bg-white px-6 py-3 text-sm font-black text-gold-rich shadow-gold transition hover:border-gold hover:text-white"
             >
-              Contact Us
+              <span>Contact Us</span>
             </a>
           </div>
         </div>
       </div>
     </section>
   );
+}
+
+function indexDelay(title: string) {
+  return values.findIndex((value) => value.title === title) * 80;
 }

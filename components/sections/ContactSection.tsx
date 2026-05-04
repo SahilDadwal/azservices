@@ -41,14 +41,16 @@ export function ContactSection() {
   return (
     <section id="contact" className="bg-white py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <SectionHeading
-          eyebrow="Contact"
-          title="Connect with AZ Services"
-          description="Share your business goals, setup stage, and preferred jurisdiction. AZ Services will help you plan the next step with a clean advisory path."
-        />
+        <div data-animate>
+          <SectionHeading
+            eyebrow="Contact"
+            title="Connect with AZ Services"
+            description="Share your business goals, setup stage, and preferred jurisdiction. AZ Services will help you plan the next step with a clean advisory path."
+          />
+        </div>
 
         <div className="mt-14 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="rounded-lg border border-gold-soft bg-white p-6 shadow-gold sm:p-8">
+          <div className="rounded-lg border border-gold-soft bg-white p-6 shadow-gold sm:p-8" data-animate="left">
             <h3 className="text-2xl font-black text-gold">Company details</h3>
             <p className="mt-4 text-base leading-8 text-gold-rich">
               Clean documentation and clear communication are the foundation of every company
@@ -68,9 +70,9 @@ export function ContactSection() {
             </div>
           </div>
 
-          <div className="rounded-lg border border-gold-soft bg-white p-6 shadow-gold sm:p-8">
+          <div className="rounded-lg border border-gold-soft bg-white p-6 shadow-gold sm:p-8" data-animate="right">
             <div className="flex items-center gap-3">
-              <span className="grid h-12 w-12 place-items-center rounded-lg border border-gold-soft bg-gold/10 text-gold">
+              <span className="motion-icon grid h-12 w-12 place-items-center rounded-lg border border-gold-soft bg-gold/10 text-gold">
                 <Send className="h-6 w-6" aria-hidden="true" />
               </span>
               <div>
@@ -101,10 +103,10 @@ export function ContactSection() {
 
               <button
                 type="submit"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-gold bg-gold-linear px-7 py-4 text-base font-black text-white shadow-gold"
+                className="motion-button inline-flex items-center justify-center gap-2 rounded-full border border-gold bg-gold-linear px-7 py-4 text-base font-black text-white shadow-gold"
               >
-                Send Message
-                <ArrowRight className="h-5 w-5" aria-hidden="true" />
+                <span>Send Message</span>
+                <ArrowRight className="motion-arrow h-5 w-5" aria-hidden="true" />
               </button>
 
               {status ? <p className="text-sm font-bold text-gold-rich">{status}</p> : null}
@@ -129,7 +131,7 @@ function InfoItem({
 }) {
   const content = (
     <>
-      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-gold-soft bg-gold/10 text-gold">
+      <span className="motion-icon grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-gold-soft bg-gold/10 text-gold">
         {icon}
       </span>
       <span>
@@ -141,13 +143,13 @@ function InfoItem({
 
   if (href) {
     return (
-      <a href={href} className="flex items-start gap-4 rounded-lg border border-gold-soft bg-white p-4 shadow-gold transition hover:border-gold">
+      <a href={href} className="contact-motion flex items-start gap-4 rounded-lg border border-gold-soft bg-white p-4 shadow-gold transition hover:border-gold">
         {content}
       </a>
     );
   }
 
-  return <div className="flex items-start gap-4 rounded-lg border border-gold-soft bg-white p-4 shadow-gold">{content}</div>;
+  return <div className="contact-motion flex items-start gap-4 rounded-lg border border-gold-soft bg-white p-4 shadow-gold">{content}</div>;
 }
 
 function Field({

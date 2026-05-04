@@ -19,7 +19,7 @@ export function Header() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-gold-soft/50 bg-white/90 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
         <a href="#hero" className="flex items-center gap-3" onClick={() => setIsOpen(false)}>
-          <span className="grid h-11 w-11 place-items-center rounded-lg border border-gold bg-gold-linear text-lg font-black text-white shadow-gold">
+          <span className="motion-icon grid h-11 w-11 place-items-center rounded-lg border border-gold bg-gold-linear text-lg font-black text-white shadow-gold">
             AZ
           </span>
           <span className="leading-tight">
@@ -46,10 +46,10 @@ export function Header() {
 
         <a
           href="#contact"
-          className="hidden items-center gap-2 rounded-full border border-gold bg-gold-linear px-5 py-3 text-sm font-bold text-white shadow-gold transition hover:border-gold-bright lg:inline-flex"
+          className="motion-button hidden items-center gap-2 rounded-full border border-gold bg-gold-linear px-5 py-3 text-sm font-bold text-white shadow-gold transition hover:border-gold-bright lg:inline-flex"
         >
-          Book Consultation
-          <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          <span>Book Consultation</span>
+          <ArrowRight className="motion-arrow h-4 w-4" aria-hidden="true" />
         </a>
 
         <button
@@ -78,11 +78,11 @@ export function Header() {
             ))}
             <a
               href="#contact"
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full border border-gold bg-gold-linear px-5 py-3 text-sm font-bold text-white"
+              className="motion-button mt-2 inline-flex items-center justify-center gap-2 rounded-full border border-gold bg-gold-linear px-5 py-3 text-sm font-bold text-white"
               onClick={() => setIsOpen(false)}
             >
-              Book Consultation
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              <span>Book Consultation</span>
+              <ArrowRight className="motion-arrow h-4 w-4" aria-hidden="true" />
             </a>
           </nav>
         </div>
