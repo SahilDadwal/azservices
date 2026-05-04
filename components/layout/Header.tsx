@@ -15,7 +15,7 @@ export function Header() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
         <a href="#hero" className="flex items-center gap-3">
           <span
-            className="motion-icon grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-gold bg-gold-linear font-heading text-lg font-black tracking-tight text-white shadow-gold"
+            className="motion-icon grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-gold bg-gold-linear font-heading text-lg font-bold tracking-tight text-white shadow-gold"
             aria-hidden="true"
           >
             AZ
@@ -44,10 +44,10 @@ export function Header() {
 
         <a
           href="#contact"
-          className="motion-button inline-flex shrink-0 items-center gap-2 rounded-full border border-gold bg-gold-linear px-6 py-3.5 text-sm font-bold text-white shadow-gold transition hover:border-gold-bright sm:px-5 sm:py-3"
+          className="motion-button inline-flex shrink-0 items-center gap-1.5 rounded-full border border-gold bg-gold-linear px-3 py-2 text-xs font-bold leading-tight text-white shadow-gold transition hover:border-gold-bright lg:gap-2 lg:px-5 lg:py-3 lg:text-sm lg:leading-normal"
         >
           <span>Book Consultation</span>
-          <ArrowRight className="motion-arrow h-4 w-4" aria-hidden="true" />
+          <ArrowRight className="motion-arrow h-3.5 w-3.5 shrink-0 lg:h-4 lg:w-4" aria-hidden="true" />
         </a>
       </div>
     </header>

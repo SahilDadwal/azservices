@@ -24,7 +24,7 @@ export function Footer() {
         <div>
           <div className="flex items-center gap-3">
             <span
-              className="motion-icon grid h-12 w-12 shrink-0 place-items-center rounded-lg border border-gold bg-gold-linear font-heading text-xl font-black tracking-tight text-white shadow-gold"
+              className="motion-icon grid h-12 w-12 shrink-0 place-items-center rounded-lg border border-gold bg-gold-linear font-heading text-xl font-bold tracking-tight text-white shadow-gold"
               aria-hidden="true"
             >
               AZ

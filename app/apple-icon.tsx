@@ -19,7 +19,7 @@ export default function AppleIcon() {
           background: "linear-gradient(135deg, #6B5B2D 0%, #AD8330 52%, #C6AE73 100%)",
           color: "#FFFFFF",
           fontSize: 72,
-          fontWeight: 900,
+          fontWeight: 700,
           fontFamily: "ui-sans-serif, system-ui, sans-serif",
           letterSpacing: "-0.04em",
           borderRadius: 40
