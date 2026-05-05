@@ -1,14 +1,10 @@
 import {
   ArrowRight,
-  Briefcase,
   Building2,
   Calculator,
-  ClipboardCheck,
   Globe,
   House,
   Landmark,
-  Search,
-  ShieldCheck,
   WalletCards
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -57,30 +53,6 @@ const services: Service[] = [
     title: "Corporate Tax And Accounting",
     description:
       "Corporate tax registration guidance, VAT awareness, bookkeeping coordination, and financial record support."
-  },
-  {
-    icon: ShieldCheck,
-    title: "Compliance Advisory",
-    description:
-      "Ongoing support for statutory records, filings, regulatory readiness, and practical compliance controls."
-  },
-  {
-    icon: Search,
-    title: "Due Diligence",
-    description:
-      "Document review and corporate due diligence support for onboarding, transactions, banking, and partnership decisions."
-  },
-  {
-    icon: ClipboardCheck,
-    title: "Visa And Emirates ID Support",
-    description:
-      "Coordination guidance for residency-linked steps after company setup, including medical, biometrics, visa, and Emirates ID stages."
-  },
-  {
-    icon: Briefcase,
-    title: "Ongoing Corporate Administration",
-    description:
-      "Operational support after incorporation so the company remains organized, documented, and ready for growth."
   }
 ];
 
@@ -92,7 +64,7 @@ export function ServicesSection() {
           <SectionHeading
             eyebrow="Services"
             title="A complete corporate advisory desk for UAE business growth"
-            description="From initial company formation through banking, tax, accounting, due diligence, and compliance, AZ Services keeps your corporate journey organized and commercially practical."
+            description="From initial company formation through banking, tax, and accounting, AZ Services keeps your corporate journey organized and commercially practical."
           />
         </div>
 
