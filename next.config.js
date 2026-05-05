@@ -9,8 +9,10 @@ function getAllowedDevOrigins() {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "export",
   allowedDevOrigins: getAllowedDevOrigins(),
   images: {
+    unoptimized: true,
     formats: ["image/avif", "image/webp"]
   }
 };
