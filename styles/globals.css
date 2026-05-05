@@ -81,6 +81,11 @@
 
 @layer components {
   [data-animate] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .js-animations [data-animate] {
     opacity: 0;
     transform: translateY(34px);
     transition:
@@ -89,20 +94,20 @@
     will-change: opacity, transform;
   }
 
-  [data-animate="zoom"] {
+  .js-animations [data-animate="zoom"] {
     transform: scale(0.94);
   }
 
-  [data-animate="flip"] {
+  .js-animations [data-animate="flip"] {
     transform: perspective(900px) rotateX(8deg) translateY(28px);
     transform-origin: center bottom;
   }
 
-  [data-animate="left"] {
+  .js-animations [data-animate="left"] {
     transform: translateX(-38px);
   }
 
-  [data-animate="right"] {
+  .js-animations [data-animate="right"] {
     transform: translateX(38px);
   }
 

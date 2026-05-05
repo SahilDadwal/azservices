@@ -1,6 +1,7 @@
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { ScrollAnimations } from "@/components/layout/ScrollAnimations";
+import Script from "next/script";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { AdvisoryPlansSection } from "@/components/sections/AdvisoryPlansSection";
 import { ContactSection } from "@/components/sections/ContactSection";
@@ -16,6 +17,9 @@ import { WhyChooseUsSection } from "@/components/sections/WhyChooseUsSection";
 export default function Home() {
   return (
     <>
+      <Script id="enable-scroll-animations" strategy="beforeInteractive">
+        {`document.documentElement.classList.add("js-animations");`}
+      </Script>
       <ScrollAnimations />
       <Header />
       <main className="min-w-0 w-full overflow-x-hidden">
